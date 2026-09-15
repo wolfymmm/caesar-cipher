@@ -1,0 +1,235 @@
+.section {
+  width: 100%;
+  max-width: 1200px;
+  margin-top: 156px;
+  padding: 0 24px;
+  box-sizing: border-box;
+}
+
+.title {
+  font-family: var(--font-serif, serif);
+  font-size: 32px;
+  font-weight: 500;
+  text-align: center;
+  color: #ffffff;
+  margin-bottom: 48px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 32px;
+  align-items: start;
+}
+
+
+.viewer {
+  width: 100%;
+  height: 460px;
+  background-color: #161616;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  color: #a1a1a6;
+  font-size: 14px;
+  line-height: 1.6;
+  overflow-y: auto;
+  white-space: pre-wrap;
+  word-break: break-word;
+  box-sizing: border-box;
+}
+
+.viewerPlaceholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #555555;
+  font-style: italic;
+}
+
+
+.panel {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.fileStatus {
+  font-size: 14px;
+  color: #a1a1a6;
+  margin-bottom: 8px;
+}
+
+.filename {
+  color: var(--color-accent);
+  font-weight: 500;
+}
+
+
+.controlRow {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+}
+
+
+.panel button {
+  flex: 1;
+  padding: 12px 20px;
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+
+.btnPrimary {
+  background-color: var(--color-accent);
+  color: #121212;
+  border: none;
+}
+
+.btnPrimary:hover:not(:disabled) {
+  background-color: var(--color-accent-hover);
+}
+
+
+.btn {
+  background-color: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--color-border);
+  color: #ffffff;
+}
+
+.btn:hover:not(:disabled) {
+  background-color: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.panel button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+
+.panel select,
+.panel input[type="number"] {
+  flex: 1;
+  padding: 12px 16px;
+  background-color: #161616;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  color: #ffffff;
+  font-size: 14px;
+  outline: none;
+  appearance: none;
+  -webkit-appearance: none;
+  transition: border-color 0.2s;
+  box-sizing: border-box;
+}
+
+
+.controlRow select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23a1a1a6' d='M6 8.5L2 4.5h8z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  padding-right: 36px;
+}
+
+.panel select:focus,
+.panel input:focus {
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Планшети */
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  
+  .viewer {
+    height: 320px;
+  }
+}
+
+
+@media (max-width: 600px) {
+  .section {
+    margin-top: 80px;
+    padding: 0 16px;
+  }
+
+  .title {
+    font-size: 24px;
+    margin-bottom: 24px;
+  }
+
+  .viewer {
+    height: 240px;
+    padding: 16px;
+    font-size: 13px;
+  }
+
+  .fileStatus {
+    font-size: 13px;
+  }
+
+  .panel {
+    gap: 12px;
+  }
+
+  .controlRow {
+    gap: 10px;
+  }
+
+  .panel button {
+    padding: 12px 0;
+    font-size: 13px;
+  }
+
+  .panel select,
+  .panel input[type="number"] {
+    padding: 12px 14px;
+    font-size: 14px;
+  }
+}
+
+
+.panel button {
+  font-family: inherit; 
+  flex: 1;
+  padding: 12px 20px;
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.panel select,
+.panel input[type="number"] {
+  font-family: inherit; 
+  flex: 1;
+  padding: 12px 16px;
+  background-color: #161616;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  color: #ffffff;
+  font-size: 14px;
+  outline: none;
+  appearance: none;
+  -webkit-appearance: none;
+  transition: border-color 0.2s;
+  box-sizing: border-box;
+}

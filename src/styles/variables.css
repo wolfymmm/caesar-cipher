@@ -1,0 +1,21 @@
+:root {
+  --color-bg: #121212;
+  --color-bg-card: rgba(30, 30, 30, 0.75);
+  --color-surface: #262626;
+  --color-surface-hover: #333333;
+  --color-border: rgba(255, 255, 255, 0.2);
+  --color-border-subtle: rgba(255, 255, 255, 0.1);
+
+  --color-accent: #fbe7a1;
+  --color-accent-hover: #f5dc8a;
+  --color-text: #ffffff;
+  --color-text-muted: #9e9e9e;
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 24px;
+  --radius-pill: 9999px;
+
+  --font-main: 'Montserrat', sans-serif;
+  --font-serif: 'Montserrat', sans-serif;
+}

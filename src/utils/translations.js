@@ -1,0 +1,76 @@
+export const translations = {
+  UA: {
+    header: {
+      title: 'CAESAR CIPHER ONLINE',
+      logout: 'Вихід',
+    },
+    hero: {
+      title: 'Caesar Cipher',
+      subtitle: 'Шифр Цезаря онлайн: простий та зручний спосіб зашифрувати чи розшифрувати ваш текст',
+      btnText: 'Шифрувати слово',
+      btnDoc: 'Шифрувати документ',
+    },
+    textCipher: {
+      title: 'Робота з текстом',
+      inputPlaceholder: 'Текст (до 7 слів)',
+      shiftPlaceholder: 'Зсув',
+      encryptBtn: 'Зашифр.',
+      decryptBtn: 'Розшифр.',
+      defaultResult: 'Результат',
+    },
+    documentCipher: {
+      title: 'Робота з документом',
+      selectedFile: 'Вибраний файл:',
+      noFile: 'файл не обрано',
+      chooseBtn: 'Обрати файл',
+      changeBtn: 'Змінити',
+      deleteBtn: 'Видалити',
+      shiftPlaceholder: 'Зсув',
+      encryptBtn: 'Зашифрувати',
+      decryptBtn: 'Розшифрувати',
+      downloadBtn: 'Завантажити як',
+      placeholder: "Вміст вашого файлу з'явиться тут!",
+      loading: 'Обробка вмісту файлу...',
+    },
+    footer: {
+      rights: 'Всі права захищено.',
+    },
+  },
+  EN: {
+    header: {
+      title: 'CAESAR CIPHER ONLINE',
+      logout: 'Exit',
+    },
+    hero: {
+      title: 'Caesar Cipher',
+      subtitle: 'Caesar Cipher online: an easy and convenient way to encrypt or decrypt your text',
+      btnText: 'Encrypt word',
+      btnDoc: 'Encrypt document',
+    },
+    textCipher: {
+      title: 'Text Encryption',
+      inputPlaceholder: 'Text (up to 7 words)',
+      shiftPlaceholder: 'Shift',
+      encryptBtn: 'Encrypt',
+      decryptBtn: 'Decrypt',
+      defaultResult: 'Result',
+    },
+    documentCipher: {
+      title: 'Document Encryption',
+      selectedFile: 'Selected file:',
+      noFile: 'no file selected',
+      chooseBtn: 'Select file',
+      changeBtn: 'Change',
+      deleteBtn: 'Delete',
+      shiftPlaceholder: 'Shift',
+      encryptBtn: 'Encrypt',
+      decryptBtn: 'Decrypt',
+      downloadBtn: 'Download as',
+      placeholder: 'Your file content will appear here!',
+      loading: 'Processing file content...',
+    },
+    footer: {
+      rights: 'All rights reserved.',
+    },
+  },
+};

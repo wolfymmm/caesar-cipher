@@ -1,0 +1,127 @@
+.hero {
+  width: calc(100% - 64px);
+  max-width: 1328px;
+  min-height: 562px;
+  margin: 16px auto 0;
+  padding: 40px 32px;
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 28px;
+  background: rgba(18, 18, 18, 0.28);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  border: none;
+  box-shadow: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+.title {
+  font-family: 'Arbutus Slab', serif;
+  font-size: 96px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  color: #ffffff;
+  margin: 0 0 20px 0;
+  line-height: 1.1;
+}
+
+.subtitle {
+  font-size: 20px;
+  color: #d1d1d6;
+  max-width: 600px;
+  line-height: 1.6;
+  margin: 0 0 40px 0;
+}
+
+.actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.btn {
+  padding: 18px 48px;
+  border-radius: var(--radius-pill, 9999px);
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+  transition: all 0.2s ease;
+}
+
+.btn:hover {
+  background: rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.55);
+}
+
+@media (max-width: 1024px) {
+  .hero {
+    width: calc(100% - 48px);
+    min-height: 500px;
+    padding: 40px 24px;
+  }
+
+  .title {
+    font-size: 64px;
+  }
+
+  .subtitle {
+    font-size: 18px;
+    max-width: 500px;
+    margin-bottom: 32px;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero {
+    width: calc(100% - 32px);
+    min-height: 380px;
+    margin: 12px auto 0;
+    padding: 30px 16px;
+    border-radius: 20px;
+  }
+
+  .title {
+    font-size: 38px;
+    margin-bottom: 12px;
+  }
+
+  .subtitle {
+    font-size: 15px;
+    margin-bottom: 24px;
+    line-height: 1.5;
+  }
+
+  .actions {
+    gap: 12px;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .btn {
+    padding: 14px 28px;
+    font-size: 13px;
+    width: 100%;
+    max-width: 280px;
+  }
+}

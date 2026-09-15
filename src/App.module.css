@@ -1,0 +1,26 @@
+.mainScreen {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Було space-between, ставимо flex-start */
+  background-image: url('./assets/hero_image.png');
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-sizing: border-box;
+}
+
+.mainScreen::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.mainScreen > * {
+  position: relative;
+  z-index: 2;
+}
