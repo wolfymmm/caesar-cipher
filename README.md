@@ -1,16 +1,72 @@
-# React + Vite
+# Caesar Cipher
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Криптографічний веб-застосунок для симетричного шифрування та дешифрування тексту й документів за допомогою шифру Цезаря
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 📌 Основний функціонал
 
-## React Compiler
+- **Двомовна підтримка алфавітів:**
+  - Український алфавіт (33 літери).
+  - Англійський алфавіт (26 літер).
+- **Режими обробки:**
+  - **Text Cipher:** Швидке шифрування та розшифрування тексту в реальному часі.
+  - **Document Cipher:** Робота з файлами — завантаження, вилучення тексту, шифрування та експорт.
+- **Підтримка форматів файлів:**
+  - Читання / Імпорт: `.txt`, `.docx`, `.html`, `.pdf`.
+  - Збереження / Експорт: `.txt`, `.docx`, `.html`.
+- **Збереження регістру та пунктуації:** Спецсимволи, пробіли, цифри та розділові знаки залишаються без змін, регістр літер зберігається.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🧮 Математична модель
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Шифрування та розшифрування реалізовано за формулами модульної арифметики:
+
+- **Шифрування:**  
+  $$y = (x + k) \pmod n$$
+
+- **Дешифрування:**  
+  $$x = (y - k + n) \pmod n$$
+
+Де:
+- $x$ — порядковий номер відкритого символу в алфавіті;
+- $y$ — порядковий номер зашифрованого символу;
+- $k$ — ключ (величина зсуву);
+- $n$ — потужність алфавіту ($n = 33$ для UA, $n = 26$ для EN).
+
+---
+
+## 🏗️ Архітектура та система класів
+
+Логіку криптосистеми побудовано за принципами ООП із розділенням відповідальності:
+
+- **`CaesarCipher` (`src/services/CaesarCipher.js`):**
+  - Керування алфавітами та потужністю $n$.
+  - `validateKey(key)` — нормалізація та приведення ключа за модулем $n$.
+  - `encrypt(text, shift)` / `decrypt(text, shift)` — публічні методи перетворення.
+  - `_transform(...)` — ядро симетричної заміни символів.
+
+- **`TextValidator` (`src/services/TextValidator.js`):**
+  - `isValidPayload(text)` — перевірка валідності вхідних даних.
+  - `normalizeShift(rawValue, lang)` — фільтрація вводу та обмеження зсуву діапазоном $[0, n - 1]$.
+  - `sanitize(input, lang, maxWords)` — очищення тексту від символів чужих алфавітів.
+
+---
+
+## 🛠️ Стек технологій
+
+- **Frontend:** React 19, Vite
+- **Стилізація:** SCSS / CSS Modules
+- **Робота з документами:** `mammoth` (.docx), `docx` (.docx export), `pdfjs-dist` (.pdf)
+- **Тестування:** Vitest
+- **Деплой:** GitHub Pages (`gh-pages`)
+
+---
+
+## 🚀 Встановлення та запуск
+
+1. **Клонувати репозиторій:**
+   ```bash
+   git clone [https://github.com/](https://github.com/)<YOUR_USERNAME>/caesar-cipher.git
+   cd caesar-cipher
